@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Zen | Auto-Capture & OCR Organizer</title>
+    <meta name="description" content="Screen Zen is the background Electron app that instantly captures, OCRs, and organizes your screenshots automatically.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-foreground selection:bg-accent selection:text-accentForeground">
+
+    <header class="fixed top-0 left-0 w-full z-50 mix-blend-difference px-6 py-6 md:px-16">
+        <nav class="flex justify-between items-center max-w-5xl mx-auto">
+            <a href="#" class="font-mono text-sm tracking-widest uppercase font-semibold">Screen Zen</a>
+            <div class="flex gap-8 items-center">
+                <a href="#features" class="font-mono text-sm tracking-widest uppercase hover:text-accent transition-colors hidden md:block">Features</a>
+                <a href="#download" class="group relative inline-flex items-center gap-2 font-mono text-sm tracking-widest uppercase font-semibold overflow-hidden">
+                    <span class="relative z-10 transition-transform group-hover:-translate-x-1">Download</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1"></i>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-accent origin-left scale-x-100 transition-transform duration-300 group-hover:scale-x-110"></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen flex items-center px-6 md:px-16 py-40 overflow-hidden relative">
+            <!-- Content -->
+            <div class="max-w-6xl mx-auto w-full relative z-10">
+                <div class="max-w-2xl">
+                    <span class="block font-mono text-xs md:text-sm tracking-[0.3em] uppercase text-mutedForeground mb-8 reveal-up">00 // The Future of Workflow</span>
+                    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-none tracking-tighter uppercase mb-12 reveal-up">
+                        Stop <span class="text-accent">Hunting</span>.<br>Start <span class="italic font-display font-normal normal-case">Capturing.</span>
+                    </h1>
+                    <div class="reveal-up delay-100">
+                        <p class="text-lg md:text-xl text-mutedForeground mb-12 leading-relaxed">
+                            Screen Zen runs in your background, instantly grabbing <br>every screenshot you take. OCR-driven tagging, real-time <br>organization, and zero manual work. Built for thinkers, <br>hackers, and creators.
+                        </p>
+                        <div class="flex flex-wrap gap-8">
+                            <a href="ScreenZen.exe" download class="button-primary">
+                                <span>Get Started Now</span>
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </a>
+                            <a href="#how-it-works" class="button-ghost">
+                                <span>How it works</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Absolute Image (Desktop) -->
+            <div class="hero-image-desktop absolute right-[-10%] top-1/2 -translate-y-1/2 w-3/5 pointer-events-none reveal-up delay-300">
+                <div class="relative">
+                    <div class="absolute -inset-20 bg-accent/20 blur-[120px] rounded-full"></div>
+                    <img src="src/hero.png" alt="Screen Zen App" class="relative z-10 w-full h-auto rounded-xl border border-border shadow-2xl hero-image-float transform rotate-[-2deg]">
+                </div>
+            </div>
+
+            <!-- Mobile Image (Shown below content on mobile) -->
+            <div class="hero-image-mobile mt-20 reveal-up delay-300">
+                <img src="src/hero.png" alt="Screen Zen App" class="w-full h-auto rounded-lg border border-border shadow-xl">
+            </div>
+
+            <!-- Decorative Number -->
+            <div class="absolute bottom-0 right-0 text-[20rem] md:text-[30rem] font-bold text-muted opacity-20 pointer-events-none select-none leading-none -mb-20 -mr-20 hidden lg:block">01</div>
+        </section>
+
+        <!-- Horizontal Divider -->
+        <hr class="border-border">
+
+        <!-- Impact Section / Quote -->
+        <section class="py-28 px-6 md:px-16 container mx-auto">
+            <div class="max-w-4xl">
+                <h2 class="font-display italic text-3xl md:text-5xl leading-tight mb-8 reveal-up">
+                    "Screenshots litter desktop unorganized. It's impossible to find things later. Screen Zen solves this auto-magically."
+                </h2>
+                <div class="w-16 h-1 bg-accent reveal-up"></div>
+            </div>
+        </section>
+
+        <hr class="border-border">
+
+        <!-- Features Section -->
+        <section id="features" class="py-40 px-6 md:px-16 bg-muted">
+            <div class="max-w-5xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-baseline mb-24 gap-8">
+                    <h2 class="text-4xl md:text-6xl font-bold tracking-tight uppercase reveal-up">Core Intelligence</h2>
+                    <span class="font-mono text-sm tracking-widest uppercase text-mutedForeground reveal-up">Powered by Tesseract OCR</span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-border border-border border">
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="camera" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Auto-Capture</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">Runs in the tray. Listens for screenshot events. Grabs them instantly without lifting a finger.</p>
+                    </div>
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="search" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Instant OCR</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">Every word in your screenshot is indexed. Search for "meeting notes" or "color codes" and find it in seconds.</p>
+                    </div>
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="tag" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Auto-Tagging</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">Intelligent keyword extraction. Tags are created based on visual content as soon as the file is on disk.</p>
+                    </div>
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="layout-grid" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Gallery View</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">A minimal, high-performance gallery to browse your history. Filter by date, tag, or text content.</p>
+                    </div>
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="shield" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Offline First</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">No cloud, no APIs, no tracking. Your data stays on your machine. Privacy by design.</p>
+                    </div>
+                    <div class="bg-background p-8 md:p-12 hover:bg-muted transition-colors group">
+                        <div class="flex items-center gap-4 mb-8">
+                            <i data-lucide="zap" class="w-8 h-8 text-accent"></i>
+                            <h3 class="text-2xl font-bold uppercase">Blazing Fast</h3>
+                        </div>
+                        <p class="text-mutedForeground leading-relaxed">Built with Electron and Webpack. Lightweight footprint, maximum performance.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section id="how-it-works" class="py-40 px-6 md:px-16 overflow-hidden">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-extrabold uppercase mb-24 reveal-up">The Workflow</h2>
+                
+                <div class="space-y-60">
+                    <div class="flex flex-col md:flex-row gap-12 md:items-center reveal-up">
+
+                        <div class="text-6xl md:text-8xl font-bold text-border w-32">01</div>
+                        <div class="max-w-xl">
+                            <h3 class="text-2xl md:text-4xl font-bold uppercase mb-6">Install & Run</h3>
+                            <p class="text-lg text-mutedForeground leading-relaxed">One-click installation. Screen Zen sits quietly in your system tray, watching your native screenshot folders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-12 md:items-center reveal-up">
+
+                        <div class="text-6xl md:text-8xl font-bold text-border w-32">02</div>
+                        <div class="max-w-xl">
+                            <h3 class="text-2xl md:text-4xl font-bold uppercase mb-6">Take a Screenshot</h3>
+                            <p class="text-lg text-mutedForeground leading-relaxed">Use your normal keys (PrtSc, Cmd+Shift+4). Screen Zen detects the file immediately and starts processing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col md:flex-row gap-12 md:items-center reveal-up">
+
+                        <div class="text-6xl md:text-8xl font-bold text-border w-32">03</div>
+                        <div class="max-w-xl">
+                            <h3 class="text-2xl md:text-4xl font-bold uppercase mb-6">Search & Find</h3>
+                            <p class="text-lg text-mutedForeground leading-relaxed">Open the app, type any text you remember seeing, and there it is. Open the original file with a single click.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section id="download" class="py-40 px-6 md:px-16 bg-background text-foreground overflow-hidden relative">
+            <div class="max-w-5xl mx-auto relative z-10">
+                <span class="block font-mono text-sm tracking-[0.3em] uppercase text-accent mb-8 reveal-up">01 // Final Call</span>
+                <h2 class="text-6xl md:text-8xl lg:text-9xl font-extrabold uppercase leading-none mb-12 tracking-tighter reveal-up">
+                    Ready to <br><span class="text-accent italic font-display font-normal normal-case">Zen out?</span>
+                </h2>
+                <div class="flex flex-wrap gap-8 reveal-up delay-100">
+                    <a href="ScreenZen.exe" download class="inline-flex items-center gap-4 bg-accent text-accentForeground px-10 py-5 font-mono uppercase tracking-widest font-bold hover:bg-foreground hover:text-background transition-all rounded-sm">
+                        <i data-lucide="download" class="w-6 h-6"></i>
+                        <span>Download for Windows</span>
+                    </a>
+                </div>
+                <p class="mt-12 font-mono text-sm uppercase tracking-widest opacity-60 reveal-up delay-200">Version 2.0.0 // Open Source // Local OCR</p>
+            </div>
+            
+            <!-- Glow Effect -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent/20 blur-[150px] rounded-full z-0 opacity-50"></div>
+            
+            <!-- Decorative BG Text -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[30rem] font-bold opacity-5 pointer-events-none select-none leading-none z-0 hidden lg:block whitespace-nowrap">ZEN</div>
+        </section>
+    </main>
+
+    <footer class="py-20 px-6 md:px-16 border-t border-border">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+            <div>
+                <a href="#" class="font-mono text-xl tracking-widest uppercase font-bold mb-4 block">Screen Zen</a>
+                <p class="text-mutedForeground max-w-xs mb-8">Automating the unorganized. Built for the modern workflow.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-mutedForeground hover:text-accent transition-colors"><i data-lucide="github" class="w-5 h-5"></i></a>
+                    <a href="#" class="text-mutedForeground hover:text-accent transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-16">
+                <div>
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-foreground font-bold mb-6">Product</h4>
+                    <ul class="space-y-4 font-mono text-xs uppercase tracking-wider text-mutedForeground">
+                        <li><a href="#features" class="hover:text-accent transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-accent transition-colors">Workflow</a></li>
+                        <li><a href="#download" class="hover:text-accent transition-colors">Download</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-mono text-xs uppercase tracking-widest text-foreground font-bold mb-6">Support</h4>
+                    <ul class="space-y-4 font-mono text-xs uppercase tracking-wider text-mutedForeground">
+                        <li><a href="#" class="hover:text-accent transition-colors">Documentation</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Github</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-5xl mx-auto mt-20 pt-8 border-t border-border flex justify-between items-center text-xs font-mono uppercase tracking-widest text-mutedForeground">
+            <span>&copy; 2024 Screen Zen. All Rights Reserved.</span>
+            <span class="hidden md:block">Built with Bold Typography / Vanila Minimal</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
